@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/store/order"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "id": 8546,
+        "petId": 278,
+        "quantity": 8120,
+        "shipDate": "1986-04-24T18:36:16.503Z",
+        "status": "placed",
+        "complete": false
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

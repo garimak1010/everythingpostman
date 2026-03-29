@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/pet"
+  method: PUT
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  body:
+    type: json
+    content: |-
+      {
+        "name": "doggie",
+        "photoUrls": [
+          "string",
+          "string"
+        ],
+        "id": 1458,
+        "category": {
+          "id": 4458,
+          "name": "string"
+        },
+        "tags": [
+          {
+            "id": 3684,
+            "name": "string"
+          },
+          {
+            "id": 9960,
+            "name": "string"
+          }
+        ],
+        "status": "sold"
+      }
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

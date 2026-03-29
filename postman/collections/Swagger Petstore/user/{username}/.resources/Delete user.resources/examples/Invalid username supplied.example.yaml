@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/user/:username"
+  method: DELETE
+  pathVariables:
+    - key: username
+      value: string
+      description: The name that needs to be deleted
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 1000

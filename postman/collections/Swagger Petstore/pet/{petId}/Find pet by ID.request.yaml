@@ -1,0 +1,18 @@
+$kind: http-request
+description: Returns a single pet
+url: "{{baseUrl}}/pet/:petId"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: petId
+    value: "3678"
+    description: ID of pet to return
+auth:
+  type: apikey
+  credentials:
+    key: api_key
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Find pet by ID.resources/examples
+order: 2000

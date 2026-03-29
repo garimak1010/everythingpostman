@@ -1,0 +1,46 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/pet/:petId"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: api_key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  pathVariables:
+    - key: petId
+      value: "3678"
+      description: ID of pet to return
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "name": "doggie",
+        "photoUrls": [
+          "string",
+          "string"
+        ],
+        "id": 1458,
+        "category": {
+          "id": 4458,
+          "name": "string"
+        },
+        "tags": [
+          {
+            "id": 3684,
+            "name": "string"
+          },
+          {
+            "id": 9960,
+            "name": "string"
+          }
+        ],
+        "status": "sold"
+      }
+order: 1000

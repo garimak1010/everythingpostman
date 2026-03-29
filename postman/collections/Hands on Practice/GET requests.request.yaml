@@ -1,0 +1,26 @@
+$kind: http-request
+url: https://jsonplaceholder.typicode.com/posts/1
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\",function(){\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      pm.test(\"Response has userID\",function(){\r
+
+      \    let data=pm.response.json();    \r
+
+      \    pm.expect(data.userId).to.exist;\r
+
+      });\r
+
+      pm.test(\"ID should be 1\",function(){\r
+
+      \    pm.expect(pm.response.json().id).to.eql(1);\r
+
+      });"
+    language: text/javascript
+order: 1000

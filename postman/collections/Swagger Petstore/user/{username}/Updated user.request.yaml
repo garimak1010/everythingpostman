@@ -1,0 +1,25 @@
+$kind: http-request
+description: This can only be done by the logged in user.
+url: "{{baseUrl}}/user/:username"
+method: PUT
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: username
+    value: string
+    description: name that need to be updated
+body:
+  type: json
+  content: |-
+    {
+      "id": 806,
+      "username": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "email": "string",
+      "password": "string",
+      "phone": "string",
+      "userStatus": 6125
+    }
+examples: ./.resources/Updated user.resources/examples
+order: 2000

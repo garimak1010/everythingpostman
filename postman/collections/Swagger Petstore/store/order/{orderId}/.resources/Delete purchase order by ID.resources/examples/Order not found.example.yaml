@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/store/order/:orderId"
+  method: DELETE
+  pathVariables:
+    - key: orderId
+      value: "2860"
+      description: ID of the order that needs to be deleted
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

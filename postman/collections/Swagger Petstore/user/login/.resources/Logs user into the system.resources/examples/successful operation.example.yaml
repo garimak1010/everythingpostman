@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/user/login?username=string&password=string"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: username
+      value: string
+      description: The user name for login
+    - key: password
+      value: string
+      description: The password for login in clear text
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: X-Expires-After
+      value: 2009-04-16T19:06:46.376Z
+      description: date in UTC when token expires
+    - key: X-Rate-Limit
+      value: "8678"
+      description: calls per hour allowed by the user
+  body:
+    type: json
+    content: string
+order: 1000

@@ -1,0 +1,82 @@
+$kind: http-request
+name: Chatbot AI Response
+url: https://api.example.com/chat
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"prompt\": \"What is diabetes?\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "//Parse response\r
+
+      let response=pm.response.json();\r
+
+      let answer=response.answer || \" \";\r
+
+      \r
+
+      //Status code check\r
+
+      pm.test(\"Status code is 200\",function(){\r
+
+      pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      //Check Response is not empty\r
+
+      pm.test(\"Response is not empty\",function(){\r
+
+      \    pm.expect(answer).not.to.be.empty;\r
+
+      });\r
+
+      \r
+
+      //Keyword validation(Relevance check)\r
+
+      pm.test(\"Response contains relevant keywords\",function(){\r
+
+      \    let keywords=[\"diabetes\",\"blood sugar\",\"chronic\"];\r
+
+      \    let isRelevant=keywords.some(words=>\r
+
+      \    answer.toLowerCase().includes(words));\r
+
+      pm.expect(isRelevant).to.be.true;\r
+
+      });\r
+
+      \r
+
+      //Basic Toxicity Check\r
+
+      pm.test(\"Response does not contain toxic words\",function(){\r
+
+      \    let blockedWords=[\"hate\",\"kill\",\"stupid\"];\r
+
+      \    let isToxic=blockedWords.some(words=>\r
+
+      \    answer.toLowerCase().includes(words));\r
+
+      pm.expect(isToxic).to.be.false;\r
+
+      });\r
+
+      \r
+
+      //Response length check\r
+
+      pm.test(\"Response is meaningful(length check)\",function(){\r
+
+      \    pm.expect(answer.length).to.be.greaterThan(5);\r
+
+      });"
+    language: text/javascript
+order: 5000

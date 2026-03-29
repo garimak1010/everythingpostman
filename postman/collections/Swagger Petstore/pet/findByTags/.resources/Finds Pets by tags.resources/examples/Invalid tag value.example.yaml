@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/pet/findByTags?tags=string"
+  method: GET
+  headers:
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  queryParams:
+    - key: tags
+      value: string
+      description: Tags to filter by
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

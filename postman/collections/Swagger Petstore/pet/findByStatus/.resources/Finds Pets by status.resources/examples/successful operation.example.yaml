@@ -1,0 +1,71 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/pet/findByStatus?status=available"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  queryParams:
+    - key: status
+      value: available
+      description: Status values that need to be considered for filter
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "name": "doggie",
+          "photoUrls": [
+            "string",
+            "string"
+          ],
+          "id": 2707,
+          "category": {
+            "id": 6245,
+            "name": "string"
+          },
+          "tags": [
+            {
+              "id": 6235,
+              "name": "string"
+            },
+            {
+              "id": 5225,
+              "name": "string"
+            }
+          ],
+          "status": "pending"
+        },
+        {
+          "name": "doggie",
+          "photoUrls": [
+            "string",
+            "string"
+          ],
+          "id": 9263,
+          "category": {
+            "id": 4764,
+            "name": "string"
+          },
+          "tags": [
+            {
+              "id": 6492,
+              "name": "string"
+            },
+            {
+              "id": 3646,
+              "name": "string"
+            }
+          ],
+          "status": "sold"
+        }
+      ]
+order: 1000

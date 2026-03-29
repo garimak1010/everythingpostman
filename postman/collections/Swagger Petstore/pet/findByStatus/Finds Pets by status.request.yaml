@@ -1,0 +1,21 @@
+$kind: http-request
+description: Multiple status values can be provided with comma separated strings
+url: "{{baseUrl}}/pet/findByStatus?status=available&status=available"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: status
+    value: available
+    description: Status values that need to be considered for filter
+  - key: status
+    value: available
+    description: Status values that need to be considered for filter
+auth:
+  type: oauth2
+  credentials:
+    scope: read:pets write:pets
+    authUrl: https://petstore.swagger.io/oauth/authorize
+    grant_type: implicit
+examples: ./.resources/Finds Pets by status.resources/examples
+order: 1000

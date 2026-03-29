@@ -1,0 +1,11 @@
+$kind: http-request
+description: For valid response try integer IDs with positive integer value.
+  Negative or non-integer values will generate API errors
+url: "{{baseUrl}}/store/order/:orderId"
+method: DELETE
+pathVariables:
+  - key: orderId
+    value: "2860"
+    description: ID of the order that needs to be deleted
+examples: ./.resources/Delete purchase order by ID.resources/examples
+order: 2000

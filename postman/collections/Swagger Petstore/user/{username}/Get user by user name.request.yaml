@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{baseUrl}}/user/:username"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: username
+    value: string
+    description: "The name that needs to be fetched. Use user1 for testing. "
+examples: ./.resources/Get user by user name.resources/examples
+order: 1000

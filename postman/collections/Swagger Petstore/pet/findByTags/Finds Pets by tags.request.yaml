@@ -1,0 +1,22 @@
+$kind: http-request
+description: Multiple tags can be provided with comma separated strings. Use
+  tag1, tag2, tag3 for testing.
+url: "{{baseUrl}}/pet/findByTags?tags=string&tags=string"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: tags
+    value: string
+    description: Tags to filter by
+  - key: tags
+    value: string
+    description: Tags to filter by
+auth:
+  type: oauth2
+  credentials:
+    scope: read:pets write:pets
+    authUrl: https://petstore.swagger.io/oauth/authorize
+    grant_type: implicit
+examples: ./.resources/Finds Pets by tags.resources/examples
+order: 1000

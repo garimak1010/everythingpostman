@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/user"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "id": 806,
+        "username": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "password": "string",
+        "phone": "string",
+        "userStatus": 6125
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/pet/:petId"
+method: DELETE
+headers:
+  api_key: string
+pathVariables:
+  - key: petId
+    value: "3678"
+    description: Pet id to delete
+auth:
+  type: oauth2
+  credentials:
+    scope: read:pets write:pets
+    authUrl: https://petstore.swagger.io/oauth/authorize
+    grant_type: implicit
+examples: ./.resources/Deletes a pet.resources/examples
+order: 4000

@@ -1,0 +1,37 @@
+$kind: http-request
+name: https://jsonplaceholder.typicode.com/users/1
+url: https://jsonplaceholder.typicode.com/users/1
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"User schema validation\", function () {\r
+
+      \r
+
+      \    const schema = {\r
+
+      \        \"type\": \"object\",\r
+
+      \        \"properties\": {\r
+
+      \            \"id\": { \"type\": \"number\" },\r
+
+      \            \"name\": { \"type\": \"string\" },\r
+
+      \            \"username\": { \"type\": \"string\" },\r
+
+      \            \"email\": { \"type\": \"string\" }\r
+
+      \        },\r
+
+      \        \"required\": [\"id\", \"name\", \"email\"]\r
+
+      \    };\r
+
+      \r
+
+      \    pm.response.to.have.jsonSchema(schema);\r
+
+      });"
+    language: text/javascript
+order: 2000

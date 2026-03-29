@@ -1,0 +1,39 @@
+$kind: http-request
+url: "{{baseUrl}}/pet"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "doggie",
+      "photoUrls": [
+        "string",
+        "string"
+      ],
+      "id": 1458,
+      "category": {
+        "id": 4458,
+        "name": "string"
+      },
+      "tags": [
+        {
+          "id": 3684,
+          "name": "string"
+        },
+        {
+          "id": 9960,
+          "name": "string"
+        }
+      ],
+      "status": "sold"
+    }
+auth:
+  type: oauth2
+  credentials:
+    scope: read:pets write:pets
+    authUrl: https://petstore.swagger.io/oauth/authorize
+    grant_type: implicit
+examples: ./.resources/Update an existing pet.resources/examples
+order: 5000

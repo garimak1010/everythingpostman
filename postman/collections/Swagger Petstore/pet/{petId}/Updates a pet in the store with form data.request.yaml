@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{baseUrl}}/pet/:petId"
+method: POST
+headers:
+  Content-Type: application/x-www-form-urlencoded
+pathVariables:
+  - key: petId
+    value: "3678"
+    description: ID of pet that needs to be updated
+body:
+  type: urlencoded
+  content:
+    - key: name
+      value: string
+      description: Updated name of the pet
+    - key: status
+      value: string
+      description: Updated status of the pet
+auth:
+  type: oauth2
+  credentials:
+    scope: read:pets write:pets
+    authUrl: https://petstore.swagger.io/oauth/authorize
+    grant_type: implicit
+examples: ./.resources/Updates a pet in the store with form data.resources/examples
+order: 3000

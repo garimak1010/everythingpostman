@@ -1,0 +1,32 @@
+$kind: http-request
+url: "{{baseUrl}}/user/createWithArray"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    [
+      {
+        "id": 2407,
+        "username": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "password": "string",
+        "phone": "string",
+        "userStatus": 3527
+      },
+      {
+        "id": 6808,
+        "username": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "password": "string",
+        "phone": "string",
+        "userStatus": 3146
+      }
+    ]
+examples: ./.resources/Creates list of users with given input array.resources/examples
+order: 1000

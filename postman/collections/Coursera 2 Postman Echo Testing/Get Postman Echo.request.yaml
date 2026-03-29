@@ -1,0 +1,30 @@
+$kind: http-request
+url: https://postman-echo.com/get?monitor=test
+method: GET
+queryParams:
+  monitor: test
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\", function () {\r
+
+      pm.response.to.have.status(200);\r
+
+      });\r
+
+      pm.test(\"Response time is below 500ms\", function () {\r
+
+      pm.expect(pm.response.responseTime).to.be.below(500);\r
+
+      });\r
+
+      pm.test(\"Response has monitor property\", function () {\r
+
+      const jsonData = pm.response.json();\r
+
+      pm.expect(jsonData.args).to.have.property('monitor');\r
+
+      });"
+    language: text/javascript
+order: 3000

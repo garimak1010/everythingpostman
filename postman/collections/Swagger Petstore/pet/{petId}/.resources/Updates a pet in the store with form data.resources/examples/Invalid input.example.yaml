@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/pet/:petId"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: application/x-www-form-urlencoded
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  pathVariables:
+    - key: petId
+      value: "3678"
+      description: ID of pet that needs to be updated
+  body:
+    type: urlencoded
+    content:
+      - key: name
+        value: string
+        description: Updated name of the pet
+      - key: status
+        value: string
+        description: Updated status of the pet
+response:
+  statusCode: 405
+  statusText: Method Not Allowed
+  body:
+    type: text
+    content: ""
+order: 1000

@@ -1,0 +1,10 @@
+$kind: http-request
+description: This can only be done by the logged in user.
+url: "{{baseUrl}}/user/:username"
+method: DELETE
+pathVariables:
+  - key: username
+    value: string
+    description: The name that needs to be deleted
+examples: ./.resources/Delete user.resources/examples
+order: 3000

@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{baseUrl}}/pet/:petId/uploadImage"
+method: POST
+headers:
+  Content-Type: multipart/form-data
+  Accept: application/json
+pathVariables:
+  - key: petId
+    value: "3678"
+    description: ID of pet to update
+body:
+  type: formdata
+  content:
+    - type: text
+      key: additionalMetadata
+      value: string
+      description: Additional data to pass to server
+    - type: file
+      key: file
+      src: []
+      description: file to upload
+auth:
+  type: oauth2
+  credentials:
+    scope: read:pets write:pets
+    authUrl: https://petstore.swagger.io/oauth/authorize
+    grant_type: implicit
+examples: ./.resources/uploads an image.resources/examples
+order: 1000

@@ -1,0 +1,24 @@
+$kind: http-request
+url: https://postman-echo.com/get?test=value
+method: GET
+queryParams:
+  test: value
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\", function () {\r
+
+      \     pm.response.to.have.status(200); \r
+
+      \     }); \r
+
+      \     pm.test(\"Response contains 'test' argument\", function () { \r
+
+      \        const jsonData = pm.response.json(); \r
+
+      \        pm.expect(jsonData.args).to.have.property('test'); \r
+
+      \        pm.expect(jsonData.args.test).to.eql(\"value\"); \r
+
+      \        });"
+    language: text/javascript
+order: 1000

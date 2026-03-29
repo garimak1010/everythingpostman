@@ -1,0 +1,14 @@
+$kind: http-request
+description: Returns a map of status codes to quantities
+url: "{{baseUrl}}/store/inventory"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: apikey
+  credentials:
+    key: api_key
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Returns pet inventories by status.resources/examples
+order: 1000

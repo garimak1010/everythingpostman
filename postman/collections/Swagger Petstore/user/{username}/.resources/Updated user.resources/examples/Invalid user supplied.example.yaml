@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/user/:username"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: username
+      value: string
+      description: name that need to be updated
+  body:
+    type: json
+    content: |-
+      {
+        "id": 806,
+        "username": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "password": "string",
+        "phone": "string",
+        "userStatus": 6125
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 1000

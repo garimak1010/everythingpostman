@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/pet/findByStatus?status=available"
+  method: GET
+  headers:
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  queryParams:
+    - key: status
+      value: available
+      description: Status values that need to be considered for filter
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

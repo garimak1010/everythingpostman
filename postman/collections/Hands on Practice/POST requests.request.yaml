@@ -1,0 +1,43 @@
+$kind: http-request
+url: https://jsonplaceholder.typicode.com/posts
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"New Title\",\r
+
+    \  \"body\": \"Learning automation\",\r
+
+    \  \"userId\": 1\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 201\", function () {\r
+
+      \    pm.response.to.have.status(201);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Response has id\", function () {\r
+
+      \    let data = pm.response.json();\r
+
+      \    pm.expect(data.id).to.exist;\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Validate title\", function () {\r
+
+      \    let data = pm.response.json();\r
+
+      \    pm.expect(data.title).to.eql(\"New Title\");\r
+
+      });"
+    language: text/javascript
+order: 2000

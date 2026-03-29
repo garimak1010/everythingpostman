@@ -1,0 +1,19 @@
+# Use this workspace to collaborate
+workspace:
+  id: d2eea627-891d-477b-b69f-02845b044ebb
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+cloudResources:
+  collections:
+    ..\postman\collections\Swagger Petstore: 21239940-42bc520b-69a9-4734-a7fe-69924c58f16f
+    ..\postman\collections\End-to-End Tests: 21239940-483978a8-58ba-4056-926f-37909771c42a
+    ..\postman\collections\APIChainingDemo: 21239940-61561847-1b62-4ded-a14f-a2c9f2e2c067
+    ..\postman\collections\Coursera 2 Postman Echo Testing: 21239940-86bfb76a-4c59-4821-baaa-8f0f5636e2ba
+    ..\postman\collections\Hands on Practice: 21239940-b4a0a19b-d3a0-4ea6-9868-1c26a618b73e
+    ..\postman\collections\API Monitoring Collection: 21239940-c12cd24d-5928-42da-b954-40f97b2440f8
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

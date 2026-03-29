@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/pet/:petId"
+  method: GET
+  headers:
+    - key: api_key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  pathVariables:
+    - key: petId
+      value: "3678"
+      description: ID of pet to return
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 3000

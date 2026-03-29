@@ -1,0 +1,13 @@
+$kind: http-request
+description: For valid response try integer IDs with value >= 1 and <= 10. Other
+  values will generated exceptions
+url: "{{baseUrl}}/store/order/:orderId"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: orderId
+    value: "4"
+    description: ID of pet that needs to be fetched
+examples: ./.resources/Find purchase order by ID.resources/examples
+order: 1000
